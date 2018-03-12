@@ -34,7 +34,7 @@ Given additional resource I would consider the following improvements:
  - Consider the problem of scaling. What changes are required to support more users. This would involve things like caching current state properly using something like *Caffeine* that will also provide expiry. What changes would be required to support horizontal scaling? Are we using databases sensibly or should we bring in something like the *CQRS* pattern. What testing can we add to evaluate performance with multiple users interacting with the system and evaluate throughput (*Gatling*)?
  - A merchant portal enabling administration of transactions.
  
- #User Balance Visualisation
+ # User Balance Visualisation
  If I were to implement a visualisation page I may implement the following:
  - summary of user's current funds: available, blocked in numeric form
  - Some form of visualisation to accompany the above (possibly using *VictoryJS*). Would this be individual charts or use the *VictoryStack* chart to overlay the information. 
