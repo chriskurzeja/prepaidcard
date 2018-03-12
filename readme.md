@@ -1,7 +1,7 @@
-#Prepaid Card
+# Prepaid Card
 A simple implementation of a REST API for a prepaid card onto which:
 
-###The user can
+### The user can
 - Create a card. On success the cardId is returned.
 - Load money. On success a confirmation message is returned.
 - See total loaded money. On success the total amount loaded in pence is returned.
@@ -11,7 +11,7 @@ A simple implementation of a REST API for a prepaid card onto which:
 
 The user API has a route for each transaction.
 
-###The merchant can
+### The merchant can
 - **authorise** transactions and block the funds. On success a summary of the state for the current transaction is returned.
 - **capture** funds from an authorised transaction. On success a summary of the state for the current transaction is returned.
 - **reverse** the transaction and change the amount blocked. On success a summary of the state for the current transaction is returned.
@@ -23,7 +23,7 @@ There is also an admin API that can list all the current users and provide their
 
 A Swagger2 UI is available to interact with the REST api.
 
-#Todo List
+# Todo List
 Given additional resource I would consider the following improvements:
  - Audit the return values for the REST API. Is the HTTP code correct? We shouldn't be sending *BadRequest* back when a transaction isn't valid as the request is fine.
  - Consider using *Lombok* or *Kotlin* for the data classes - reduces boiler plate code. If not using either of these then consider using the Apache Commons reflection builders for hashcode, equals, and toString.
