@@ -23,9 +23,11 @@ There is also an admin API that can list all the current users and provide their
 
 A Swagger2 UI is available to interact with the REST api.
 
+Money is represented in pence, eg minimum currency value, to avoid rounding/serialization issues.
+
 # Todo List
 Given additional resource I would consider the following improvements:
- - Audit the return values for the REST API. Is the HTTP code correct? We shouldn't be sending *BadRequest* back when a transaction isn't valid as the request is fine.
+ - Audit the return values for the REST API. Is the HTTP code correct? We shouldn't be sending *BadRequest* back when a transaction isn't valid as the request is fine..
  - Consider using *Lombok* or *Kotlin* for the data classes - reduces boiler plate code. If not using either of these then consider using the Apache Commons reflection builders for hashcode, equals, and toString.
  - Add unit testing for the REST API using the *SpringMVC standaloneSetup*.
  - Consider how to break down *TransactionServiceTest* into multiple test files per transaction type?
@@ -33,6 +35,7 @@ Given additional resource I would consider the following improvements:
  - Seek some peer review of existing code/structure/models.
  - Consider the problem of scaling. What changes are required to support more users. This would involve things like caching current state properly using something like *Caffeine* that will also provide expiry. What changes would be required to support horizontal scaling? Are we using databases sensibly or should we bring in something like the *CQRS* pattern. What testing can we add to evaluate performance with multiple users interacting with the system and evaluate throughput (*Gatling*)?
  - A merchant portal enabling administration of transactions.
+ - Asynchronous handling of transactions. Use *CompletableFutures* or similar. Need to investigate SpringBoot support.
  
  # User Balance Visualisation
  If I were to implement a visualisation page I may implement the following:
